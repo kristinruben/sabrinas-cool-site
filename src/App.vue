@@ -1,12 +1,39 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <h1>what up vue 3.0.0-alpha.4 x typescript</h1>
+    <router-view>
+      <router-link></router-link>
+    </router-view>
+    <!-- <div id="nav"> -->
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+      <router-link to="/about">About</router-link>
+      <router-link to="/closet">Closet</router-link>
+    <!-- </div>
+    <router-view/> -->
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent, ref } from 'vue';
+import About from './views/About.vue';
+import Closet from './views/Closet.vue';
+import Home from './views/Home.vue';
+
+export default defineComponent({
+  setup() {
+    return {
+      main: ref('Hello World'),
+
+    };
+  },
+  components: {
+    About,
+    Closet,
+    Home,
+  },
+});
+</script>
 
 <style lang="scss">
 #app {

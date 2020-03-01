@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <Fragment>
+    <About />
+    <Closet />
+  </Fragment>
 </template>
 
-<script>
+<script lang="ts">
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import { defineComponent, Fragment, reactive } from 'vue';
+import About from './About.vue';
+import Closet from './Closet.vue';
 
-export default {
-  name: 'home',
-  components: {
-    HelloWorld,
+export default defineComponent({
+  props: {},
+  setup() {
+    const state = reactive({
+
+    });
+    return {
+      state,
+    };
   },
-};
+  components: {
+    Closet,
+  },
+});
 </script>
